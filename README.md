@@ -89,7 +89,7 @@ When running ansible locally you need to add the public keys of the machines to 
 ```
 $ terraform output -json | ./register_host_keys.py
 ```
-And then in order to actually have ansible use your AWS private key to access the machines remotely use ```ssh-agent```
+And then in order to actually have ansible use your AWS private key to access the machines remotely use ```ssh-agent```. This key should be the same one you told terraform to use in creating the instances (```ec2_public_key_name``` in the table above).
 ```
 $ ssh-agent bash
 bash-3.2$ ssh-add /path/to/your.pem
