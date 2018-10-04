@@ -92,6 +92,6 @@ $ terraform output -json | ./register_host_keys.py
 And then in order to actually have ansible use your AWS private key to access the machines remotely use ```ssh-agent```
 ```
 $ ssh-agent bash
-bash-3.2$  ssh-add /path/to/your.pem
+bash-3.2$ ssh-add /path/to/your.pem
 bash-3.2$ ansible-playbook -i hosts.yml all.yml
 ```
